@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cammino_Depositpayment>
+            <version>0.0.1</version>
+            <depends>
+				<Mage_Payment />
+			</depends>
+        </Cammino_Depositpayment>
+    </modules>
+    <global>
+    	 <models>
+        	<depositpayment>
+        		<class>Cammino_Depositpayment_Model</class>
+        	</depositpayment>
+        </models>
+    	<helpers>
+            <depositpayment>
+                <class>Cammino_Depositpayment_Helper</class>
+            </depositpayment>
+        </helpers>
+       <blocks>
+       		<depositpayment>
+       			<class>Cammino_Depositpayment_Block</class>
+       		</depositpayment>
+       </blocks>
+    </global>
+	<frontend>
+		<routers>
+			<depositpayment>
+				<use>standard</use>
+				<args>
+					<module>Cammino_Depositpayment</module>
+					<frontName>depositpayment</frontName>
+				</args>
+			</depositpayment>
+		</routers>
+	</frontend>
+    <default>
+        <payment>
+            <depositpayment>
+                <active>1</active>
+                <model>Cammino_Depositpayment_Model_Default</model>
+                <order_status>processing</order_status>
+                <title>Depósito / Transferência Bancária</title>
+            </depositpayment>
+         </payment>
+    </default>
+</config>
