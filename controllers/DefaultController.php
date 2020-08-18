@@ -12,6 +12,8 @@ class Cammino_Depositpayment_DefaultController extends Mage_Core_Controller_Fron
 		Mage::register("depositpayment_ordervalue", $this->getOrderFormatedValue($order_value));
 		Mage::register("depositpayment_orderid", $order_id);
 
+		$order_details->sendNewOrderEmail();
+
 		$this->render();	
 	}
 
